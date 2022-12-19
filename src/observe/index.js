@@ -12,6 +12,7 @@ class Observe {
 
 // 这里 value引用了data[key]的属性 延长了函数的生命周期 随后又因为 get和set监听的是全局事件 闭包不被销毁
 export function defineReactive(target, key, value) {
+  observe(value); //递归 对子对象进行属性劫持
   Object.defineProperty(target, key, {
     get() {
       return value;
