@@ -23,7 +23,7 @@ const mount = (vnode, container) => {
   //   处理子节点
   if (vnode.children) {
     if (typeof vnode.children == "string") {
-      el.textContext = vnode.children;
+      el.innerHTML = vnode.children;
     } else {
       vnode.children.forEach((item) => {
         mount(item, el);
